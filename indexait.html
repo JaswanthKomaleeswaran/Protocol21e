@@ -1,0 +1,581 @@
+<!doctype html>
+<html>
+    <head>
+     
+	  <link rel="shortcut icon" href="zan.ico">
+      <title>AIT Office Bearers</title>
+      <!--link rel="stylesheet" href="assets/css/dropcast.css"-->
+	     <link rel="stylesheet" href="css\styleh.css">
+	   <style>
+	   @keyframes buzz {
+  50% {
+    transform: translate(3px); }
+  100% {
+    transform: translate(-3px); } }
+@keyframes spin {
+  from {
+    transform: rotateZ(0); }
+  to {
+    transform: rotateZ(1turn); } }
+@keyframes shake {
+  0%, 20%, 100% {
+    transform: translateX(0); }
+  40%, 80% {
+    transform: translateX(-2px); }
+  60% {
+    transform: translateX(2px); } }
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  font-size: 62.5%;
+  background-color: #141720;
+  color: #F7F7F6;
+  display: flex;
+  flex-direction: column; }
+  body.page--detail .site__title {
+    margin-top: 0; }
+
+
+a {
+  text-decoration: none;
+  color: #5D6BCF;
+  font-weight: 700; }
+  a:hover {
+    text-decoration: underline; }
+
+footer {
+  background-color: #1C1F2A;
+  display: flex;
+  padding: .5rem 2rem;
+  font-size: 1rem;
+  font-weight: 300; }
+  footer .footer__content {
+    width: 60%; }
+  footer .footer__logo {
+    width: 40%;
+    text-align: right;
+    align-self: center;
+    margin-top: 0.5rem 0 -0.5rem 0; }
+
+.hidden {
+  opacity: 0; }
+
+
+
+
+.site {
+  padding: 2rem 3rem; }
+
+.site__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative; }
+  .site__title.site__title--separator:after {
+    position: absolute;
+    border-bottom: 3px solid #5c5edc;
+    width: 40%;
+    content: '';
+    left: 0;
+    bottom: -1.3rem; }
+
+.site__description {
+  color: #c1bfbf;
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding-top: 1rem;
+  z-index: 1; }
+
+.site__label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: #c1bfbf; }
+
+.site__secondary_title {
+  display: none;
+  color: black;
+  margin: 2rem 5rem 0 5rem;
+  font-size: 1.2rem;
+   }
+
+.site__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  z-index: 1; }
+  .site__navigation:hover .site__navigation_items {
+    text-decoration: none; }
+  .site__navigation * {
+    transition: .5s ease-out; }
+  .site__navigation .site__navigation_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem; }
+    .site__navigation .site__navigation_items label {
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    .site__navigation .site__navigation_items h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      font-weight: 800;
+      color: white; }
+  .site__navigation .site__navigation_items--right {
+    background-color: #F79E77;
+    padding-left: 5rem;
+    text-align: right; }
+    .site__navigation .site__navigation_items--right label {
+      color: #f15917; }
+    .site__navigation .site__navigation_items--right:hover {
+      background-color: #f15917; }
+      .site__navigation .site__navigation_items--right:hover label {
+        color: #692406; }
+  .site__navigation .site__navigation_items--left {
+    background-color: #7CCDB9;
+    padding-right: 5rem; }
+    .site__navigation .site__navigation_items--left label {
+      color: #3fa48b; }
+    .site__navigation .site__navigation_items--left:hover {
+      background-color: #3fa48b; }
+      .site__navigation .site__navigation_items--left:hover label {
+        color: #14362d; }
+
+#site__bg {
+  display: none; }
+
+.episode {
+  position: relative;
+  display: flex; 
+  padding:20px;
+  margin-bottom:20px;}
+  .episode:nth-child(1) .episode__image {
+    background-image: url(edited/ae.jpg); }
+  .episode:nth-child(2) .episode__image {
+    background-image: url(edited/re.jpg); }
+  .episode:nth-child(3) .episode__image {
+    background-image: url(edited/pe.jpg); }
+  .episode:nth-child(4) .episode__image {
+    background-image: url(edited/be.jpg); }
+	.episode:nth-child(5) .episode__image {
+    background-image: url(edited/se.jpg); }
+	.episode:nth-child(6) .episode__image {
+    background-image: url(edited/ke.jpg); }
+  .episode:hover .episode__detail:before {
+    width: 100%; }
+  .episode:hover:nth-child(1) .episode__image {
+    background-image: url(original/ao.jpg); }
+  .episode:hover:nth-child(2) .episode__image {
+    background-image: url(original/ro.jpg); }
+  .episode:hover:nth-child(3) .episode__image {
+    background-image: url(original/po.jpg); }
+  .episode:hover:nth-child(4) .episode__image {
+    background-image: url(original/bo.jpg); }
+	.episode:hover:nth-child(5) .episode__image {
+    background-image: url(original/so.jpg); }
+	.episode:hover:nth-child(6) .episode__image {
+    background-image: url(original/ko.jpg); }
+
+.episode__number {
+  display: none;
+  position: absolute;
+  top: -2rem;
+  left: -1.5rem;
+  z-index: 1;
+  font-size: 3rem;
+  margin: 0;
+  color: #5D6BCF; }
+
+.episode__image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transition: all .1s ease-in-out;
+  display: block; }
+
+.episode__media {
+  position: relative;
+  width: 30%;
+  transition: .2s ease-out; }
+  .episode__media:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-image: url("../images/pixel-corner.svg");
+    width: 50px;
+    height: 50px;
+    background-size: cover; }
+  .episode__media:hover {
+    transform-origin: 0 50%;
+    transform: perspective(1000px) rotateY(-10deg) translate3d(-3px, 0, 0); }
+
+.episode__detail {
+  width: 70%;
+  padding: 0 1rem;
+  position: relative;
+  transition: width .3s ease-in-out; }
+  .episode__detail:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    content: '';
+    background-color: #292C37;
+    z-index: -1; }
+
+.episode__title h4 {
+  font-size: 1.6rem;
+  margin: 1rem 0 .3rem 0;
+  color: #F7F7F6; }
+  .episode__title h4:hover {
+    color: #5D6BCF; }
+
+.episode__description {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: #c1bfbf; }
+
+.play-pause-btn {
+  height: 100%;
+  width: 60px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #141720;
+  outline: none; }
+  .play-pause-btn.play {
+    background-image: url(../images/play.svg); }
+  .play-pause-btn.pause {
+    background-image: url("../images/pause.svg"); }
+
+@media only screen and (min-width: 320px) {
+  .page--detail .site {
+    padding-bottom: 5rem;
+    padding-top: 5rem; }
+
+  .left .site__title.site__title--separator:after {
+    display: none; }
+
+  .right .episode__image {
+    width: 100px;
+    float: left;
+    margin: 1.5rem 1rem 0 0;
+    border-radius: 2px; }
+  .right .playBtn {
+    display: none; } }
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+@media only screen and (min-width: 1000px) {
+  /* main page */
+  body {
+    position: relative; }
+
+  
+
+  footer {
+    padding-left: 110px;
+    margin-bottom: -1rem; }
+
+  .main {
+    display: flex;
+    padding-left: 60px; }
+
+  #site__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block; }
+
+  .site {
+    padding-top: 4rem;
+    padding-left: 4rem;
+    flex: 1; }
+
+ 
+
+  /* episodes */
+  .episodes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 160px 0 0 50px;
+    max-width: 800px; }
+
+  .episode {
+    flex-direction: column;
+    max-width: 220px;
+    margin-right: 2rem;
+    margin-bottom: 3rem; }
+    .episode:hover .episode__detail:before {
+      display: none; }
+
+  .episode__number {
+    display: block; }
+
+  .episode__media {
+    width: 100%;
+    height: 294px;
+    max-width: 200px; }
+
+  .episode__detail {
+    width: 100%; }
+
+  .episode__description {
+    font-size: 1rem;
+    font-weight: 300; }
+
+  /* page detail */
+  .page--detail {
+    flex-direction: row; }
+    .page--detail .site {
+      display: flex;
+      padding: 0 0 0 60px; }
+
+  .left,
+  .right {
+    width: 50%; }
+
+  .left {
+    padding-left: 5rem;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column; }
+    .left .site__title.site__title--separator:after {
+      display: block;
+      width: 100px; }
+    .left .episode__date {
+      padding: 1rem 0 2rem 0;
+      color: #5D6BCF;
+      font-weight: 500;
+      font-size: 1rem; }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F6;
+    position: relative; }
+    .right .episode__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: .1;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      width: 100%;
+      margin: 0;
+      float: none;
+      object-fit: cover; }
+    .right .site__description {
+      color: #1C1F2A;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 5rem auto 5rem; }
+    .right .site__playbar {
+      margin: 5rem 3rem 0 3rem; }
+    .right .site__navigation {
+      margin: 2rem 0; }
+
+  .site__secondary_title {
+    display: block; }
+
+  /* audio player */
+  .site__playbar {
+    background: white;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); }
+
+  .audio-player {
+    position: inherit;
+    background-color: white;
+    margin-right: 5rem;
+    border-radius: 4px; } }
+@media only screen and (min-width: 1400px) {
+  .right .site__description {
+    column-count: 2; } 
+	}
+
+/*# sourceMappingURL=dropcast.css.map */
+
+	   </style>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800">
+    </head>
+    <body style="background-color:#000;font-family:'Nunito',sans-serif">
+      <div id="site__bg"></div>
+      <div class="main">
+      <header class="header home-page-one">
+		<nav class="navbar navbar-default header-navigation stricky">
+      <div class="container">
+		<div class="row">
+		<div class="col-md-12">
+		<a href="#" class="side-nav-opener">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</a>
+		</div>
+		</div>
+		</div>
+        <div class="container">   
+            <div class="navbar-header">
+            </div>                       
+            <div class="right-side-box" style="padding:5px;">
+                <a href="#" class="sidemenu-btn flaticon-menu side-nav-opener"></a>
+            </div>	
+        </div>
+		<div class="container">
+		<div class="row">
+		<div class="col-md-12">
+		<a href="#" class="side-nav-opener">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</a>
+		</div>
+		</div>
+		</div>
+		</nav>   
+		</header>		
+		
+        <section class="site" style="margin-top:100px;">
+          <h1 class="site__title site__title--separator">Protocol 21e</h1>
+          <p class="site__description">Office bearers of AIT</p><br>
+		  <br>
+		  
+        </section>
+		
+        <section class="episodes">
+          <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+              <div class="episode__image"></div>
+            </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Abdullah M</h4></div>
+              <p class="episode__description">President,Final year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;7358332016</p>
+            </div>
+          </article>
+          <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+              <div class="episode__image"></div>
+            </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Ramya Ranganathan</h4></div>
+              <p class="episode__description">Vice-President,<br>Final Year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;8870075853</p>
+            </div>
+          </article>
+          <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+              <div class="episode__image"></div>
+            </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Prem Kumar RM</h4></div>
+              <p class="episode__description">Secretary, Third Year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;8667291130 </p>
+            </div>
+          </article>
+          <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+				<div class="episode__image"></div>
+              </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Bhavani S</h4></div>
+              <p class="episode__description">Treasurer, Third Year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;8754437854</p>
+            </div>
+          </article>
+		  <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+				<div class="episode__image"></div>
+            </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Shravan Srinivasan</h4></div>
+              <p class="episode__description">Executive Member, Second Year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;9789921546</p>
+            </div>
+          </article>
+		  <article class="episode">
+            <h2 class="episode__number"></h2>
+            <div class="episode__media">
+              <div class="episode__image"></div>
+            </div>
+            <div class="episode__detail">
+              <div class="episode__title"><h4>Kaaviya Baskaran</h4></div>
+              <p class="episode__description">Executive Member, Second Year<br> IT Department, SVCE.<br><i class="fa fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;9940217001</p>
+            </div>
+          </article>
+        </section>
+      </div>
+      <footer>
+        <p class="footer__content"></p>
+        
+      </footer>
+	  <section class="hidden-sidebar side-navigation">
+    <a href="#" class="close-button side-navigation-close-btn fa fa-times"></a><!-- /.close-button -->
+    <div class="sidebar-content">
+        <a href="indexait.html"><img src="img\zan.png" alt="Awesome Image" height="200%" width="100%" align="center"></a>
+        <nav class="nav-menu">
+            <ul class="navigation-box" >
+                <li class=" current"> <a class="scroll-to-target" href="index.html">Home </a></li>                    
+                <li> <a data-target="#features" class="scroll-to-target" href="indexee.html">Events</a> </li>
+                <li> <a data-target="#services" class="scroll-to-target" href="Reg1.html">Registration</a> </li>
+                <li> <a data-target="#portfolio" class="scroll-to-target" href="indexait.html">AIT Office Bearers</a> </li>
+                <li> <a data-target="#pricing" class="scroll-to-target" href="indexabout.html">About US</a> </li>
+			</ul>
+		</nav>
+		<div class="social">
+            <a href="https://www.facebook.com/Protocol-21e-270191527149868/" class="fab fa-facebook-f"></a>
+            <a href="mailto:protocol21e@gmail.com" class="fab fa-google-plus-g"></a>
+            <a href="https://www.instagram.com/protocol_2k18/" class="fab fa-instagram"></a>
+			<a href="https://goo.gl/maps/uiAnPBZ9x3T2"><i class="fa fa-map-marker-alt"></i></a>
+			<a href="https://www.svce.ac.in/departments/transport/schedule.php"><i class="fa fa-car"></i></a>			
+        </div>  
+</section>
+<div class="scroll-to-top scroll-to-target" data-target="html"><i class="fa fa-angle-up"></i></div>                    
+
+<script src="js\jquery.js"></script>
+
+<script src="js\bootstrap.min.js"></script>
+<script src="js\bootstrap-select.min.js"></script>
+<script src="js\jquery.validate.min.js"></script>
+<script src="js\owl.carousel.min.js"></script>
+<script src="js\isotope.js"></script>
+<script src="js\jquery.easing.min.js"></script>
+<script src="js\jquery.bxslider.min.js"></script>
+<script src="js\jquery.magnific-popup.min.js"></script>
+<script src="js\wow.min.js"></script>
+<script src="js\jquery.appear.js"></script>
+<script src="js\jquery.countTo.js"></script>
+<script src="js\typed.min.js"></script>
+<script src="js\custom.js"></script>
+	  
+      <script src="assets/js/dropcast.js"></script>
+	   <meta charset="utf-8">
+      <meta name="description" content="Dropcast is a responsive HTML/CSS/Javascript template for podcasts">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    </body>
+</html>

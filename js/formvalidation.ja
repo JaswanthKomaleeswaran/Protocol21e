@@ -1,0 +1,5 @@
+function validateform()
+			{
+			var mid=document.forms["myForm"]["q2"].value;
+			alert(mid);
+			}
